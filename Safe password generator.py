@@ -1,5 +1,6 @@
 #Safe password generator
 
+import pyperclip
 import string
 import random
 
@@ -10,4 +11,5 @@ for i in range(20) :
     i = random.choice(characters)
     password += i
 
-print(password)
+pyperclip.copy(password)
+print(password, "\nCopied to clipboard")
