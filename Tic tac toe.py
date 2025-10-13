@@ -2,7 +2,6 @@
 
 from random import randrange
 
-
 def display_board(board):
 	print("+-------" * 3,"+", sep="")
 	for row in range(3):
@@ -12,7 +11,6 @@ def display_board(board):
 		print("|")
 		print("|       " * 3,"|",sep="")
 		print("+-------" * 3,"+",sep="")
-
 
 def enter_move(board):
 	ok = False
@@ -32,7 +30,6 @@ def enter_move(board):
 			continue
 	board[row][col] = 'O'
 
-
 def make_list_of_free_fields(board):
 	free = []	
 	for row in range(3): 
@@ -40,7 +37,6 @@ def make_list_of_free_fields(board):
 			if board[row][col] not in ['O','X']: 
 				free.append((row,col)) 
 	return free
-
 
 def victory_for(board,sgn):
 	if sgn == "X":	
@@ -63,7 +59,6 @@ def victory_for(board,sgn):
 		return who
 	return None
 
-
 def draw_move(board):
 	free = make_list_of_free_fields(board) 
 	cnt = len(free)
@@ -71,7 +66,6 @@ def draw_move(board):
 		this = randrange(cnt)
 		row, col = free[this]
 		board[row][col] = 'X'
-
 
 board = [ [3 * j + i + 1 for i in range(3)] for j in range(3) ] 
 board[1][1] = 'X' 
@@ -96,4 +90,5 @@ if winner == 'you':
 elif winner == 'me':
 	print("I won")
 else:
+
 	print("Tie!")
