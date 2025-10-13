@@ -1,6 +1,7 @@
 #Not finished
 #To do list
 #[12/10/25] Note to myself : gotta fix empty string bug (fixed)
+#[13/10/2025] Note to myself : fix bug in mark_task function (it won't mark the last task in the list)
 
 to_do = []
 def generate_list(): #Asks constant input from the user until indicated to stop. Then appends it to the to_do list
