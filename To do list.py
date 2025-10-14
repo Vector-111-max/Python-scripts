@@ -1,7 +1,7 @@
 #Not finished
 #To do list
 #[12/10/25] Note to myself : gotta fix empty string bug (fixed)
-#[13/10/2025] Note to myself : fix bug in mark_task function (it won't mark the last task in the list)
+#[13/10/2025] Note to myself : fix bug in mark_task function (it won't mark the last task in the list) (fixed)
 
 to_do = []
 def generate_list(): #Asks constant input from the user until indicated to stop. Then appends it to the to_do list
@@ -27,13 +27,21 @@ def check_list(): #prints to_do list in descending format
             print(i)
 
 def mark_task(): #Marks a task as done
-    mark = input("Select a task: ")
-    if mark in to_do:
-        for i in range(0, len(to_do) - 1):
-            if to_do[i] == mark :
-                to_do[i] = "✓" + mark
+    mark = ""
+    if to_do == []:
+        print("No tasks!")
+    while mark.lower() == "done":
+        mark = input("Select a task: )
+        if mark.lower() == "done":
+            break             
+        if mark not in to_do:
+            print(f"There's not a task named {mark}!")
+        else: #Renames the task adding a checkmark on the left side   
+            for i in range(0, len(to_do)):
+                if to_do[i] == mark :
+                    to_do[i] = "✓" + mark
 
-def del_task():
+def del_task(): #Deletes a task
     if to_do == []:
         print("No tasks!")
     while to_do != []:
