@@ -1,4 +1,3 @@
-#Not finished
 #To do list
 #[12/10/25] Note to myself : gotta fix empty string bug (fixed)
 #[13/10/2025] Note to myself : fix bug in mark_task function (it won't mark the last task in the list) (fixed)
@@ -58,7 +57,7 @@ def del_task(): #Deletes a task
 
 while True: 
     try:
-        action = int(input("\"1\" to generate list\n\"2\" to check list\n\"4\" to delete a task\n- "))
+        action = int(input("\"1\" to generate list\n\"2\" to check list\n\"4\" to delete a task\n- ")) #Explains the user how to use the program and receives input to take decisions
 
         if action == 1:
             generate_list()
@@ -72,5 +71,5 @@ while True:
             break
         else:
             print("Must enter a valid option")
-    except ValueError:
+    except ValueError: #Added exception to prevent a ValueError from receiving a non integer value as an input
         print("Must enter a valid option")
